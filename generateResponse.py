@@ -1,3 +1,11 @@
+__author__      = "Eero Hemminki"
+__copyright__   = "Copyright 2023"
+__credits__     = ["Eero Hemminki, Metropolia UAS Student Union METKA"]
+__license__     = "GPL"
+__version__     = "1.0.1"
+__maintainer__  = "Eero Hemminki"
+__email__       = "eero.hemminki@metkaweb.fi"
+
 import json
 import urllib.parse
 import os
@@ -6,7 +14,7 @@ import openai
 import requests
 
 # Fetch the URL from environment variables
-url = os.getenv('yourSlackChannelWebhook')
+url = os.getenv('yourSlackChannelWebhookVariable')
 
 def lambda_handler(event, context):
     # Log the received event for debugging
@@ -31,6 +39,7 @@ def lambda_handler(event, context):
     print(f"text: {text}")
     print(f"channel_id: {channel_id}")
     
+    # Full list of models available, see https://platform.openai.com/docs/models/overview
     model_to_use = "gpt-3.5-turbo"
     input_prompt = text
 
